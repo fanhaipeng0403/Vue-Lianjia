@@ -1,3 +1,7 @@
+//原来的逻辑是 , 这个文件被一个叫做dev-server.js引用,现在取消了这个文件.而是直接配置
+
+
+
 
 // https://www.cnblogs.com/daipianpian/p/8025188.html
 // 早期的vue-lic下面有dev-server.js和dev-client.js两文件，请求本地数据在dev-server.js里配置，最新的vue-webpack-template 中已经去掉了dev-server.js和dev-client.js 改用webpack.dev.conf.js代替，所以 配置本地访问在webpack.dev.conf.js里配置即可。
@@ -6,7 +10,6 @@
 // var config = require('../config')
 // 'process.env': config.dev.env
 // 'process.env': require('../config/dev.env')
-
 
 'use strict'
 const utils = require('./utils')
@@ -24,9 +27,25 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const portfinder = require('portfinder')
 
 
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+
+
+// let https = require('https')
+// let io = require('socket.io')(https)
+//
+// io.on('connection', function(socket){
+//   console.log('666');
+// })
+//
+
+// const express  = require('express')
+// let app = express()
+
+//介绍io的一个文件
+// https://www.cnblogs.com/sword-successful/p/4987124.html
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -35,7 +54,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   // cheap-module-eval-source-map is faster for development
   devtool: config.dev.devtool,
 
-  // these devServer options should be customized in /config/index.js
+  //原本有一个文件dev-server.js做这个事情
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
@@ -53,6 +72,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       ? { warnings: false, errors: true }
       : false,
     publicPath: config.dev.assetsPublicPath,
+    //原本dev-server.js里有个代理中间件
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
