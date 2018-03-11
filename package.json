@@ -6,7 +6,6 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-//    https://segmentfault.com/a/1190000012060181
     "start": "npm run dev",
     "build": "node build/build.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
@@ -16,38 +15,20 @@
   },
   "dependencies": {
 
-//    解决css问题
-//    css-loader 是处理css文件中的url()等
-//    style-loader 将css插入到页面的style标签
-//    less-loader 是将less文件编译成css
-//    sass-loader 是将sass文件编译成css
-
-    "css-loader": "^0.28.4",
     "vue-style-loader": "^3.0.1",
     "sass-loader": "^6.0.5",
     "node-sass": "^4.5.3",
-    "vue-loader": "^12.2.1",
-
-//    编译 C++ 扩展用的。
-//    https://www.zhihu.com/question/36291768
-
     "node-gyp": "^3.6.2",
-
-//   第三方库和辅助库
     "mint-ui": "^2.2.7",
     "zepto": "^1.2.0",
     "vue-scroll": "^2.0.3",
 
-//   高德地图
     "vue-amap": "^0.2.7",
-
-//  通信
     "vue-axios": "^2.0.2",
     "axios": "^0.16.1",
     "socket.io": "^2.0.2",
     "vue-socket.io": "^2.1.1-a",
 
-//  三件套
     "vue": "^2.5.2",
     "vuex": "^2.3.1",
     "vue-router": "^3.0.1"
