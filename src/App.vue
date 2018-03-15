@@ -1,9 +1,9 @@
 <template>
   <div class="app">
     <router-view></router-view>
-    <transition name="fade" v-if="this.$store.state.onetoast">
+    <!--<transition name="fade" v-if="this.$store.state.onetoast">-->
       <toast :message='tips'></toast>
-    </transition>
+    <!--</transition>-->
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   name: 'App',
   data () {
     return {
-      tips: 'Tips:此demo中所有下载链接均可直接下载,请确保您在wifi环境下'
+      tips: '临摹的小demo'
     }
   },
   mounted () {

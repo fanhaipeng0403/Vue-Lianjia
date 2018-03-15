@@ -1,7 +1,7 @@
 <template lang="html">
   <transition name="fade">
     <div class="toast">
-      <span>{{message}}</span>
+      {{message}}
     </div>
   </transition>
 </template>
@@ -15,25 +15,22 @@ export default {
 </script>
 
 <style lang="scss">
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s ease-in-out
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
+  //利用css3 进行水平居中或者垂直居中,
+  // 原理是 , 先相对父元素进行50% left 或者top 移动
+  // 然后利用translate ,移动自身的50%
+  // 这样这个元素就居中了
 .toast{
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
+  font-size: 0.75rem;
   position: fixed;
   bottom: 15%;
   width: 6rem;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   color: #fff;
   -webkit-border-radius: 1rem;
   border-radius: 1rem;
-  padding: .3rem .5rem;
+  padding: .3rem .3rem;
   background: rgba(0, 0, 0, 0.68);
 }
 </style>
