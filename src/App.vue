@@ -1,9 +1,9 @@
 <template>
   <div class="app">
     <router-view></router-view>
-    <!--<transition name="fade" v-if="this.$store.state.onetoast">-->
+    <transition name="fade" v-if="this.$store.state.onetoast">
       <toast :message='tips'></toast>
-    <!--</transition>-->
+    </transition>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   name: 'App',
   data () {
     return {
-      tips: '临摹的小demo'
+      tips: '个人练习作品'
     }
   },
   mounted () {
